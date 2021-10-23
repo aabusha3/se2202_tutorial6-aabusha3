@@ -8,7 +8,7 @@ function ComplexNumber(real, imaginary) {
 
     this.print = function() {
         // Please replace the comments with the numberic values only, don't change the printed string because it'll be used for testing
-        console.log(real + " + " + imaginary + "i");
+        console.log(real + " , " + imaginary + "i");
     }
 
 
