@@ -31,6 +31,19 @@ function ComplexNumber(real, imaginary) {
 
     // the multiplication and the division are a little more involved, so they're not required
     // feel free to define them if you're interested; you won't be penalized if you don't
+
+    this.multiply = function(theOtherComplexNumber) {
+        let newReal = (real * theOtherComplexNumber.real) - (imaginary * theOtherComplexNumber.imaginary);
+        let newImaginary = (real * theOtherComplexNumber.imaginary) + (imaginary * theOtherComplexNumber.real);
+        return new ComplexNumber(newReal, newImaginary);
+    };
+
+
+    this.divide = function(theOtherComplexNumber) {
+        let numerator = this.multiply(new ComplexNumber(theOtherComplexNumber.real, -1 * theOtherComplexNumber.imaginary));
+        let denominator = Math.pow(theOtherComplexNumber.real, 2) + Math.pow(theOtherComplexNumber.imaginary, 2);
+        return new ComplexNumber((numerator.real / denominator), (numerator.imaginary / denominator));
+    };
 };
 
 let c1 = new ComplexNumber(2, 5); // use the constructor function to create the complex number 2 + 5i
@@ -41,3 +54,9 @@ c3.print();
 
 let c4 = c1.subtract(c2);
 c4.print();
+
+// let c5 = c1.multiply(c2);
+// c5.print();
+
+// let c6 = c1.divide(c2);
+// c6.print();
