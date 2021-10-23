@@ -4,11 +4,8 @@ let ComplexNumberPrototype = {
     /*
     Add the two properties to represent the real and imaginary parts of the complex number
     */
-
-    // real: "",
-    // imaginary: "",
-
-
+    real: 0,
+    imaginary: 0,
     print: function() {
         // Please replace the comments with the numberic values only, don't change the printed string because it'll be used for testing
         console.log(this.real + " + " + this.imaginary + "i");
@@ -42,7 +39,8 @@ c1.print();
 // create a constructor function that would be used with the new keyword 
 //to create complex number objects that would work the same way
 function ComplexNumber(real, imaginary) {
-
+    this.real = real;
+    this.imaginary = imaginary;
     this.print = function() {
         // Please replace the comments with the numberic values only, don't change the printed string because it'll be used for testing
         console.log(real + " + " + imaginary + "i");
